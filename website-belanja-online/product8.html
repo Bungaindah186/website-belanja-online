@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk - Savva Skirt</title>
+  <link rel="stylesheet" href="product1.css" />
+  <style>
+    /* Tambahan styling sederhana untuk tombol nonaktif */
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/yr6xth6jzhcobntpf7gc3/foto8.jpg?rlkey=otrx8utwe2thq1148qqeqls1y&st=v4ani1em&dl=1" alt="Savva Skirt">
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/yr6xth6jzhcobntpf7gc3/foto8.jpg?rlkey=otrx8utwe2thq1148qqeqls1y&st=v4ani1em&dl=1" onclick="changeImage(this)" alt="Thumbnail 1">
+          <img src="https://www.dropbox.com/scl/fi/h9vrr7wl1efxv5wtdxv9a/foto8.1.jpg?rlkey=415db5mo89lzsq7mjlnbxgcoh&st=692a1z9e&dl=1" onclick="changeImage(this)" alt="Thumbnail 2">
+          <img src="https://www.dropbox.com/scl/fi/yukkuso4n4ngllr7hie6f/foto8.2.jpg?rlkey=jasxau4l7mxtoeitxazy8e5hq&st=h5b90r93&dl=1" onclick="changeImage(this)" alt="Thumbnail 3">
+          <img src="https://www.dropbox.com/scl/fi/os6uomksit1zaijlv5f62/foto8.3.jpg?rlkey=5shdfg6eavn5askgxxtbzhmtx&st=569z0o0i&dl=1" onclick="changeImage(this)" alt="Thumbnail 4">
+          <img src="https://www.dropbox.com/scl/fi/gqcgzjbb1ek34trbi9vcx/foto8.4.jpg?rlkey=udc5ni2wrs931kcpgxq8ftabv&st=47wd9zdw&dl=1" onclick="changeImage(this)" alt="Thumbnail 5">
+          <img src="https://www.dropbox.com/scl/fi/729uelgahrs7fkt1bazkk/foto8.5.jpg?rlkey=un94yfkiwwvtbghfmithn5o3v&st=2zubiwsb&dl=1" onclick="changeImage(this)" alt="Thumbnail 6">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Savva Skirt Pleated Rok Wanita A Line Maxi</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp89.500</span>
+          <span class="price-original">Rp199.000</span>
+          <span class="price-off">-55%</span>
+        </div>
+        <p class="ic">164 terjual online</p>
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ☆</div>
+          <div class="review-count">4.7 | 456 ulasan</div>
+        </div>
+        <p id="stok-info">Stok tersedia:</p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Hitam</option>
+            <option>Cream</option>
+            <option>Da milo</option>
+            <option>Khaki</option>
+            <option>Bw</option>
+            <option>Ivory</option>
+            <option>Beige</option>
+            <option>Light Grey</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>M Pinggang 70cm pinggul 104cm panjang bawahan 89cm Berat 42-50kg</option>
+            <option>L pinggan 76cm pinggul 112cm panjang bawahan 90cm Berat 51-55kg</option>
+            <option>XL Pinggang 82cm pinggul 116 panjang bawahan 90 cm Berat 56-60kg</option>
+            <option>XXL Pinggang 88cm pinggul 120cm panjang bawahan 90cm Berat 61-70kg</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1" />
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (3,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>Tampil elegan dengan <strong>Louvee Savva Skirt</strong>, rok maxi A-line yang dirancang untuk wanita modern yang menyukai gaya <em>minimalis namun tetap classy</em>. Cocok untuk acara santai hingga tampilan formal.</p>
+      <ul>
+        <li><strong>Desain:</strong> A-Line dengan warna polos denim wash tone bright</li>
+        <li><strong>Model:</strong> Maxi, tinggi sepinggang</li>
+        <li><strong>Bahan:</strong> Semiwool premium – lembut dan adem</li>
+        <li><strong>Detail:</strong> Manik-manik halus sebagai aksen elegan</li>
+        <li><strong>Ukuran:</strong> Extra Small – Plus Size</li>
+        <li><strong>Acara:</strong> Cocok untuk kerja, formal, hingga harian</li>
+        <li><strong>Musim:</strong> Cocok untuk semua musim</li>
+        <li><strong>Perawatan:</strong> Cuci dengan air dingin</li>
+        <li><strong>Brand:</strong> Louvee</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Data stok awal per kombinasi warna_ukuran
+    const initialStock = {
+      "Hitam_M Pinggang 70cm pinggul 104cm panjang bawahan 89cm Berat 42-50kg": 150,
+      "Cream_L pinggan 76cm pinggul 112cm panjang bawahan 90cm Berat 51-55kg": 120,
+      "Da milo_XL Pinggang 82cm pinggul 116 panjang bawahan 90 cm Berat 56-60kg": 100,
+      "Khaki_XXL Pinggang 88cm pinggul 120cm panjang bawahan 90cm Berat 61-70kg": 80,
+      // Tambahkan kombinasi lain jika perlu, default stok 0 untuk yang tidak ada
+    };
+
+    // Inisialisasi stok di localStorage jika belum ada
+    if (!localStorage.getItem("stokProdukSavva")) {
+      localStorage.setItem("stokProdukSavva", JSON.stringify(initialStock));
+    }
+
+    // Fungsi untuk update tampilan stok dan validasi tombol & input jumlah
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProdukSavva")) || {};
+      const stok = stokProduk[key] ?? 0;
+
+      // Update teks stok
+      document.getElementById("stok-info").textContent = `Stok tersedia: ${stok}`;
+
+      // Update max dan value input jumlah
+      const jumlahInput = document.getElementById("jumlah");
+      jumlahInput.max = stok;
+      if (jumlahInput.value > stok) {
+        jumlahInput.value = stok;
+      }
+      if (stok === 0) {
+        jumlahInput.value = 0;
+      } else if (jumlahInput.value < 1) {
+        jumlahInput.value = 1;
+      }
+
+      // Disable tombol jika stok habis
+      document.querySelector(".btn-cart").disabled = stok === 0;
+      document.querySelector(".btn-buy-now").disabled = stok === 0;
+    }
+
+    // Event listener untuk update stok saat pilihan berubah atau jumlah diinput
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", function () {
+      const max = parseInt(this.max);
+      if (this.value > max) {
+        this.value = max;
+      } else if (this.value < 1) {
+        this.value = 1;
+      }
+    });
+
+    window.addEventListener("load", updateStokInfo);
+
+    // Fungsi ganti gambar utama saat klik thumbnail
+    function changeImage(el) {
+      document.getElementById("mainImage").src = el.src;
+    }
+
+    // Fungsi tambah produk ke keranjang
+    function tambahKeKeranjang() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+
+      const key = `${warna}_${ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProdukSavva")) || {};
+      const stok = stokProduk[key] ?? 0;
+
+      if (jumlah > stok) {
+        alert("Stok tidak mencukupi.");
+        return;
+      }
+
+      // Kurangi stok
+      stokProduk[key] = stok - jumlah;
+      localStorage.setItem("stokProdukSavva", JSON.stringify(stokProduk));
+      updateStokInfo();
+
+      // Ambil keranjang lama
+      const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+
+      // Cek apakah produk dengan varian yang sama sudah ada di keranjang
+      const index = keranjang.findIndex(
+        item => item.nama === "Savva Skirt Pleated Rok Wanita A Line Maxi" &&
+                item.warna === warna &&
+                item.ukuran === ukuran
+      );
+
+      if (index !== -1) {
+        // Jika sudah ada, tambah jumlahnya
+        keranjang[index].jumlah += jumlah;
+      } else {
+        // Jika belum, tambah produk baru
+        keranjang.push({
+          nama: "Savva Skirt Pleated Rok Wanita A Line Maxi",
+          warna,
+          ukuran,
+          jumlah,
+          harga: "Rp89.500"
+        });
+      }
+
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      alert("Produk berhasil ditambahkan ke keranjang.");
+    }
+
+    // Fungsi proses Beli Sekarang
+    function beliSekarang() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+
+      const key = `${warna}_${ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProdukSavva")) || {};
+      const stok = stokProduk[key] ?? 0;
+
+      if (jumlah > stok) {
+        alert("Stok tidak mencukupi.");
+        return;
+      }
+
+      // Kurangi stok
+      stokProduk[key] = stok - jumlah;
+      localStorage.setItem("stokProdukSavva", JSON.stringify(stokProduk));
+      updateStokInfo();
+
+      // Simpan produk ke localStorage untuk checkout
+      const checkoutProduk = [{
+        nama: "Savva Skirt Pleated Rok Wanita A Line Maxi",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp89.500"
+      }];
+
+      localStorage.setItem("checkoutProduk", JSON.stringify(checkoutProduk));
+
+      // Redirect ke halaman checkout (buat halaman checkout sesuai kebutuhan)
+      window.location.href = "checkout.html";
+    }
+
+    // Pasang event listener tombol
+    document.querySelector(".btn-cart").addEventListener("click", tambahKeKeranjang);
+    document.querySelector(".btn-buy-now").addEventListener("click", beliSekarang);
+  </script>
+</body>
+</html>

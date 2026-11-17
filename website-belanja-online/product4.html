@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk - Claryn</title>
+  <link rel="stylesheet" href="product1.css" />
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/cyx8eqlxnr0jd2l5qr3i2/foto4.jpg?rlkey=37r87oon5b6lk5xt35ueev0o0&st=76zh5epi&dl=1" alt="Claryn Dress">
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/cyx8eqlxnr0jd2l5qr3i2/foto4.jpg?rlkey=37r87oon5b6lk5xt35ueev0o0&st=76zh5epi&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/93zjrj3i7oip6fyws767r/foto4.1.jpg?rlkey=ywy6zy30dl0w72ljcruibjv1y&st=pk01egqp&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/bs46fceueu3h23s9ncd9o/foto4.2.jpg?rlkey=hhhvfyxczuh3x1sm3igrlucp2&st=a95brq19&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/7ofnsuzzrvp9knwf09hh5/foto4.3.jpg?rlkey=fattu5rorrant1t1b4vlcwc5p&st=t6pdvonc&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/k4akti8wkuv6ubpeqcndt/foto4.4.jpg?rlkey=ul4do2bpu0u7i7mfcsbztxdpk&st=cq64b2np&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/w1wmg5qbee9kygp24pgaq/foto4.5.jpg?rlkey=dwpt5akrqq9ntmnsgibfscgmm&st=4teijtw1&dl=1" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Claryn Dress Vintage Lebaran</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp229.000</span>
+          <span class="price-original">Rp300.000</span>
+          <span class="price-off">-24%</span>
+        </div>
+        <p class="ic">259 terjual online</p>
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+          <div class="review-count">5.0 | 1.017 ulasan</div>
+        </div>
+        <p id="stok-info">Stok tersedia:</p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Soft Sage</option>
+            <option>Canary</option>
+            <option>Dark Denim</option>
+            <option>Cream Nude</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>All Size Pjg 133cm LD 105cm</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1">
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (4,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Tampil anggun dan klasik di momen spesial dengan <strong>Raya Series Simple Vintage Dress</strong>. Dress ini didesain dengan siluet <strong>A-Line Maxi</strong> yang memberikan kesan elegan dan feminin.
+      </p>
+      <p>
+        Terbuat dari bahan <strong>SnowSheer Premium</strong> yang ringan dan jatuh sempurna, dilengkapi <strong>sleting belakang</strong> yang memudahkan pemakaian. Dress simpel namun tetap memancarkan pesona vintage modern.
+      </p>
+      <ul>
+        <li><strong>Material:</strong> SnowSheer Premium</li>
+        <li><strong>Model:</strong> A-Line Maxi</li>
+        <li><strong>Sleting:</strong> Belakang</li>
+        <li><strong>Ukuran:</strong> LD 105 cm | Panjang 133 cm</li>
+        <li><strong>Merek:</strong> Studhijabstore</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Inisialisasi stok
+    if (!localStorage.getItem("stokProdukClaryn")) {
+      const stokAwal = {
+        "Soft Sage_All Size Pjg 133cm LD 105cm": 200,
+        "Canary_All Size Pjg 133cm LD 105cm": 200,
+        "Dark Denim_All Size Pjg 133cm LD 105cm": 200,
+        "Cream Nude_All Size Pjg 133cm LD 105cm": 200
+      };
+      localStorage.setItem("stokProdukClaryn", JSON.stringify(stokAwal));
+    }
+
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProdukClaryn")) || {};
+      const stok = stokProduk[key] ?? 0;
+
+      const stokInfo = document.getElementById("stok-info");
+      stokInfo.textContent = `Stok tersedia: ${stok}`;
+
+      const jumlahInput = document.getElementById("jumlah");
+      jumlahInput.max = stok;
+
+      if (jumlahInput.value < 1 || isNaN(jumlahInput.value)) jumlahInput.value = 1;
+      if (jumlahInput.value > stok) jumlahInput.value = stok;
+
+      document.querySelector(".btn-cart").disabled = stok === 0;
+      document.querySelector(".btn-buy-now").disabled = stok === 0;
+    }
+
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", updateStokInfo);
+    window.addEventListener("load", updateStokInfo);
+
+    function changeImage(element) {
+      document.getElementById("mainImage").src = element.src;
+    }
+
+    document.querySelector(".btn-cart").addEventListener("click", function () {
+      const produk = {
+        nama: "Claryn Dress Vintage Lebaran",
+        warna: document.getElementById("warna").value,
+        ukuran: document.getElementById("ukuran").value,
+        jumlah: parseInt(document.getElementById("jumlah").value),
+        harga: "Rp229.000"
+      };
+      const key = `${produk.warna}_${produk.ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProdukClaryn")) || {};
+
+      if (produk.jumlah > stokProduk[key]) {
+        alert("Jumlah melebihi stok yang tersedia.");
+        return;
+      }
+
+      stokProduk[key] -= produk.jumlah;
+      localStorage.setItem("stokProdukClaryn", JSON.stringify(stokProduk));
+
+      const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+      const index = keranjang.findIndex(item => item.nama === produk.nama && item.warna === produk.warna && item.ukuran === produk.ukuran);
+      if (index !== -1) {
+        keranjang[index].jumlah += produk.jumlah;
+      } else {
+        keranjang.push(produk);
+      }
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      alert("Produk berhasil ditambahkan ke keranjang!");
+      updateStokInfo();
+    });
+
+    document.querySelector(".btn-buy-now").addEventListener("click", function () {
+      const produk = {
+        nama: "Claryn Dress Vintage Lebaran",
+        warna: document.getElementById("warna").value,
+        ukuran: document.getElementById("ukuran").value,
+        jumlah: parseInt(document.getElementById("jumlah").value),
+        harga: "Rp229.000"
+      };
+      const key = `${produk.warna}_${produk.ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProdukClaryn")) || {};
+
+      if (produk.jumlah > stokProduk[key]) {
+        alert("Jumlah melebihi stok yang tersedia.");
+        return;
+      }
+
+      stokProduk[key] -= produk.jumlah;
+      localStorage.setItem("stokProdukClaryn", JSON.stringify(stokProduk));
+
+      localStorage.setItem("checkoutProduk", JSON.stringify([produk]));
+      window.location.href = "checkout.html";
+    });
+  </script>
+</body>
+</html>

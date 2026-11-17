@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulir Pendaftaran Penjual</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #fce3ec, #e0ecfc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px;
+        }
+
+        .signup-box {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 140px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="file"],
+        form textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: 0.3s;
+            background-color: #fff;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(to right, #5a67d8, #6b46c1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .login-link a {
+            display: inline-block;
+            margin: 5px 10px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signup-box">
+        <div class="logo">
+            <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=wmn2o2af&dl=1"
+                alt="Logo" />
+        </div>
+        <h2>Daftar Sebagai Penjual</h2>
+        <form action="submit-seller.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <label for="storeName">Nama Toko</label>
+            <input type="text" id="storeName" name="storeName" placeholder="Masukkan nama toko Anda" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Contoh: toko@mail.com" required />
+
+            <label for="phone">No. HP</label>
+            <input type="text" id="phone" name="phone" placeholder="08xxxxxxxxxx" required />
+
+            <label for="description">Deskripsi Toko</label>
+            <textarea id="description" name="description" rows="3" placeholder="Ceritakan tentang toko Anda..."></textarea>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan password" required />
+
+            <label for="password_confirm">Konfirmasi Password</label>
+            <input type="password" id="password_confirm" name="password_confirm" placeholder="Konfirmasi password" required />
+
+            <label for="logo">Upload Logo Toko</label>
+            <input type="file" id="logo" name="logo" accept="image/*" />
+
+            <button type="submit">Daftar Sekarang</button>
+        </form>
+
+        <div class="login-link">
+            <a href="home2.php"><span>←</span> Kembali ke Beranda</a>
+            <a href="login_penjual.php">Sudah punya akun? <span>→</span></a>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const phone = document.getElementById("phone").value;
+            const phonePattern = /^08[0-9]{8,11}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Nomor HP tidak valid. Harus dimulai dengan 08 dan memiliki 10-13 digit.");
+                return false;
+            }
+            const pass = document.getElementById("password").value;
+            const passConfirm = document.getElementById("password_confirm").value;
+            if (pass !== passConfirm) {
+                alert("Password dan konfirmasi password tidak cocok.");
+                return false;
+            }
+            if (pass.length < 6) {
+                alert("Password minimal 6 karakter.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk - Batwing Tunik</title>
+  <link rel="stylesheet" href="product1.css" />
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px" />
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/18gzztm3h0zuipda2ihp6/foto15.jpg?rlkey=mejvcmnt7d19nv8eddnj2gdta&st=64ve7f70&dl=1" alt="Gamis Wanita Modern" />
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/18gzztm3h0zuipda2ihp6/foto15.jpg?rlkey=mejvcmnt7d19nv8eddnj2gdta&st=64ve7f70&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/awipgts3rh9mr1kql8joe/foto15.1.jpg?rlkey=qyvcmv1abw4eosebdd1eanlkb&st=o6ii83n1&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/slh3ib0sb7e8vnyx6psjt/foto15.2.jpg?rlkey=etqb55q8yak1n8g9hstxoyuqg&st=b8al0mj2&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/cz2gk71z5rdlohhki1ex6/foto15.3.jpg?rlkey=bknlkitkjx0w8cjssx1v0h2vo&st=0756pxn7&dl=1" onclick="changeImage(this)" />
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Batwing Tunik Abaya Versi Sachet By Arunaoutfit</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp99.000</span>
+          <span class="price-original">Rp119.000</span>
+          <span class="price-off">-17%</span>
+        </div>
+        <p class="ic">150 terjual online</p>
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+          <div class="review-count">5.0 | 1.017 ulasan</div>
+        </div>
+        <p id="stok-info">Stok tersedia:</p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Black Magic</option>
+            <option>Joyfull</option>
+            <option>Powderblue</option>
+            <option>Cream Blue</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>All Size Dada 100cm Panjang dress 100cm</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1" />
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (4,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Simpel tapi tetep fashionable? <strong>Batwing Tunik Abaya Versi Sachet</strong> dari <strong>arunaoutfit</strong> hadir buat kamu yang suka gaya effortless tapi tetap rapi dan anggun!
+      </p>
+      <ul>
+        <li><strong>Bahan:</strong> Polo Linen – adem, ringan, dan <em>ironless</em> alias nggak perlu disetrika!</li>
+        <li><strong>Model:</strong> Tunik model batwing yang jatuh dan nyaman dipakai</li>
+        <li><strong>Cutting:</strong> Tidak terlalu oversized – pas buat kamu yang suka look santai tapi tetap rapi</li>
+        <li><strong>Ukuran:</strong> Lingkar Dada 110 cm, Panjang Baju 100 cm</li>
+        <li><strong>Merek:</strong> arunaoutfit</li>
+      </ul>
+      <p>Cocok banget dipakai untuk ngantor, hangout, bahkan buat daily outfit di rumah. Adem dan jatuhnya cakep banget di badan. Wajib punya buat kamu yang suka tampil praktis tapi tetap modis!</p>
+    </div>
+  </div>
+
+  <script>
+    // Inisialisasi stok
+    if (!localStorage.getItem("stokTunikAbaya")) {
+      const warnaList = ["Black Magic", "Joyfull", "Powderblue", "Cream Blue"];
+      const stok = {};
+      warnaList.forEach(w => {
+        stok[`${w}_All Size Dada 100cm Panjang dress 100cm`] = 500;
+      });
+      localStorage.setItem("stokTunikAbaya", JSON.stringify(stok));
+    }
+
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokTunikAbaya")) || {};
+      const sisa = stok[key] || 0;
+
+      document.getElementById("stok-info").textContent = `Stok tersedia: ${sisa}`;
+      const jumlahInput = document.getElementById("jumlah");
+      jumlahInput.max = sisa;
+      if (jumlahInput.value < 1) jumlahInput.value = 1;
+      if (jumlahInput.value > sisa) jumlahInput.value = sisa;
+
+      document.querySelector(".btn-cart").disabled = sisa === 0;
+      document.querySelector(".btn-buy-now").disabled = sisa === 0;
+    }
+
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", updateStokInfo);
+    window.onload = updateStokInfo;
+
+    document.querySelector(".btn-cart").addEventListener("click", function () {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokTunikAbaya"));
+
+      if (jumlah > stok[key]) return alert("Jumlah melebihi stok!");
+
+      stok[key] -= jumlah;
+      localStorage.setItem("stokTunikAbaya", JSON.stringify(stok));
+
+      const produk = {
+        nama: "Batwing Tunik Abaya Versi Sachet By Arunaoutfit",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp99.000"
+      };
+
+      const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+      const index = keranjang.findIndex(item => item.nama === produk.nama && item.warna === warna && item.ukuran === ukuran);
+
+      if (index !== -1) keranjang[index].jumlah += jumlah;
+      else keranjang.push(produk);
+
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      alert("Produk berhasil ditambahkan ke keranjang!");
+      updateStokInfo();
+    });
+
+    document.querySelector(".btn-buy-now").addEventListener("click", function (e) {
+      e.preventDefault();
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokTunikAbaya"));
+
+      if (jumlah > stok[key]) return alert("Jumlah melebihi stok!");
+
+      stok[key] -= jumlah;
+      localStorage.setItem("stokTunikAbaya", JSON.stringify(stok));
+
+      const produk = [{
+        nama: "Batwing Tunik Abaya Versi Sachet By Arunaoutfit",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp99.000"
+      }];
+
+      localStorage.setItem("checkoutProduk", JSON.stringify(produk));
+      window.location.href = "checkout.html";
+    });
+
+    function changeImage(el) {
+      document.getElementById("mainImage").src = el.src;
+    }
+  </script>
+</body>
+</html>

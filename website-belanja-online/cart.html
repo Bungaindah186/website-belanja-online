@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Keranjang Belanja</title>
+  <link rel="stylesheet" href="cartStyles.css" />
+</head>
+<body>
+  <div class="cart-container">
+    <h2>Keranjang Anda</h2>
+    <ul id="cartItems"></ul>
+    <div class="total" id="cartTotal">Total: Rp0</div>
+    <div class="actions">
+      <button class="clear-cart-btn" onclick="kosongkanKeranjang()">Kosongkan Keranjang</button>
+      <!-- Link untuk Checkout dengan validasi -->
+<a class="checkout-btn" href="checkout.html" onclick="return prepareCheckout()">Lanjut ke Checkout</a>
+    </div>
+  </div>
+
+  <script>
+    // Mengambil data keranjang dari localStorage
+    let cart = JSON.parse(localStorage.getItem("keranjang")) || [];
+    const cartList = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
+
+    // Fungsi untuk memvalidasi checkout (keranjang tidak boleh kosong)
+    function validateCheckout() {
+      if (cart.length === 0) {
+        alert("Keranjang Anda kosong. Silakan tambahkan produk terlebih dahulu.");
+        return false; // Menghentikan link untuk berpindah halaman jika keranjang kosong
+      }
+      return true; // Lanjutkan ke halaman checkout jika keranjang tidak kosong
+    }
+
+    // Fungsi untuk mengosongkan keranjang
+function kosongkanKeranjang() {
+  if (confirm("Apakah Anda yakin ingin menghapus semua item di keranjang?")) {
+    const stokProduk = JSON.parse(localStorage.getItem("stokProdukAyumi")) || {};
+
+    cart.forEach(item => {
+      const key = `${item.warna}_${item.ukuran}`;
+      if (stokProduk[key] !== undefined) {
+        stokProduk[key] += item.jumlah;
+      }
+    });
+
+    localStorage.setItem("stokProdukAyumi", JSON.stringify(stokProduk));
+    cart = [];
+    localStorage.setItem("keranjang", JSON.stringify(cart));
+    renderCart();
+  }
+}
+
+    // Fungsi untuk merender keranjang ke halaman
+    function renderCart() {
+      console.log("Data keranjang:", cart);
+      cartList.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+
+        // Menghitung harga produk
+        const harga = parseInt(item.harga.replace(/[^\d]/g, ""));
+        total += harga * item.jumlah;
+
+        li.innerHTML = `
+          <div>
+            <strong>${item.nama}</strong> (${item.warna}, ${item.ukuran}) x ${item.jumlah}
+          </div>
+          <div class="item-actions">
+            <span>Rp${(harga * item.jumlah).toLocaleString("id-ID")}</span>
+            <button class="hapus-btn" onclick="hapusItem(${index})">Hapus</button>
+          </div>
+        `;
+        cartList.appendChild(li);
+      });
+
+      // Update total harga dan simpan kembali ke localStorage
+      cartTotal.textContent = `Total: Rp${total.toLocaleString("id-ID")}`;
+      localStorage.setItem("keranjang", JSON.stringify(cart)); // Menyimpan data keranjang terbaru
+    }
+
+    // Fungsi untuk menghapus item dari keranjang
+function hapusItem(index) {
+  const item = cart[index];
+  const stokProduk = JSON.parse(localStorage.getItem("stokProdukAyumi")) || {};
+  const key = `${item.warna}_${item.ukuran}`;
+  if (stokProduk[key] !== undefined) {
+    stokProduk[key] += item.jumlah;
+    localStorage.setItem("stokProdukAyumi", JSON.stringify(stokProduk));
+  }
+
+  cart.splice(index, 1); // Hapus dari keranjang
+  localStorage.setItem("keranjang", JSON.stringify(cart));
+  renderCart();
+}
+
+    function prepareCheckout() {
+  if (cart.length === 0) {
+    alert("Keranjang Anda kosong. Silakan tambahkan produk terlebih dahulu.");
+    return false;
+  }
+
+  // Simpan ke localStorage agar checkout.html bisa ambil
+  localStorage.setItem("checkoutProduk", JSON.stringify(cart));
+
+  return true; // Lanjutkan ke checkout.html
+}
+
+
+    // Render keranjang saat pertama kali halaman dimuat
+    renderCart();
+  </script>
+</body>
+</html>

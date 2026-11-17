@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk - Gamis Wanita Modern</title>
+  <link rel="stylesheet" href="product1.css" />
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" class="logo" width="100px">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/trbd8fb4hu26rbp141oal/9b017d36-0ff9-45c4-bb43-1560d7eae84c.jpg?rlkey=in285lw3h1r3jve6oxuyi8kdy&st=wthdxs98&dl=1" alt="Gamis Wanita Modern">
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/trbd8fb4hu26rbp141oal/9b017d36-0ff9-45c4-bb43-1560d7eae84c.jpg?rlkey=in285lw3h1r3jve6oxuyi8kdy&st=wthdxs98&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/dm1n8qsd7rnywjqxb61ik/Screenshot-2025-05-02-195408.png?rlkey=8s2fi8c61ul2nud89zgxyk0e0&st=1rh52n0z&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/0e99wjhsfxy4amr65hb1g/Screenshot-2025-05-02-195451.png?rlkey=w4g1sxmlmh2y1vr4bkht5c7bt&st=c89vj69v&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/sbxutyehgvyba0tu5wxol/Screenshot-2025-05-02-195523.png?rlkey=n34swljy47mguf71ytbt8lskb&st=ow3kztup&dl=1" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Gamis Wanita Modern</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp90.525</span>
+          <span class="price-original">Rp106.500</span>
+          <span class="price-off">-15%</span>
+        </div>
+        <p class="ic">2579 terjual online</p>
+        <p id="stok-info">Stok tersedia: -</p>
+
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ☆</div>
+          <div class="review-count">4.2 | 1.298 ulasan</div>
+        </div>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Hijau Sage</option>
+            <option>Hitam</option>
+            <option>Abu-Abu</option>
+            <option>moca</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>XL LD 110</option>
+            <option>XXL LD 120</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1">
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (2,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Tampil anggun dan percaya diri dengan <strong>Gamis Wanita Modern</strong> yang dirancang khusus untuk para muslimah masa kini.
+        Terbuat dari bahan <strong>wollycrepe premium</strong> yang adem, ringan, dan tidak menerawang. Cocok dikenakan sehari-hari
+        maupun acara spesial. Desain minimalis dengan potongan elegan serta pilihan warna trendy seperti <em>Hijau Sage, Moca, dan Abu-Abu</em>
+        membuatmu tampil stylish tanpa mengorbankan kenyamanan.
+      </p>
+      <ul>
+        <li>Bahan: Wollycrepe Premium</li>
+        <li>Model: Gamis polos kekinian</li>
+        <li>Pilihan warna: Hijau Sage, Hitam, Abu-Abu, Moca</li>
+        <li>Ukuran: XL (LD 110 cm), XXL (LD 120 cm)</li>
+        <li>Cocok untuk: Sehari-hari, acara resmi, kajian</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Script untuk Thumbnail -->
+  <script>
+    function changeImage(element) {
+      const mainImage = document.getElementById('mainImage');
+      mainImage.src = element.src;
+    }
+  </script>
+
+  <!-- Inisialisasi Stok -->
+  <script>
+    if (!localStorage.getItem("stokProduk")) {
+      const stokAwal = {
+        "Hijau Sage_XL LD 110": 300,
+        "Hijau Sage_XXL LD 120": 200,
+        "Hitam_XL LD 110": 100,
+        "Hitam_XXL LD 120": 200,
+        "Abu-Abu_XL LD 110": 200,
+        "Abu-Abu_XXL LD 120": 200,
+        "moca_XL LD 110": 100,
+        "moca_XXL LD 120": 100
+      };
+      localStorage.setItem("stokProduk", JSON.stringify(stokAwal));
+    }
+  </script>
+
+  <!-- Script Dinamis Stok & Validasi -->
+  <script>
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProduk")) || {};
+      const stok = stokProduk[key] ?? 0;
+
+      document.getElementById("stok-info").textContent = `Stok tersedia: ${stok}`;
+      const jumlahInput = document.getElementById("jumlah");
+      jumlahInput.max = stok;
+      if (parseInt(jumlahInput.value) > stok) {
+        jumlahInput.value = stok;
+      }
+    }
+
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", updateStokInfo);
+    window.onload = updateStokInfo;
+  </script>
+
+  <!-- Masukkan Keranjang -->
+  <script>
+    document.querySelector(".btn-cart").addEventListener("click", function () {
+      const produk = {
+        nama: "Gamis Wanita Modern",
+        warna: document.getElementById("warna").value,
+        ukuran: document.getElementById("ukuran").value,
+        jumlah: parseInt(document.getElementById("jumlah").value),
+        harga: "Rp90.525"
+      };
+
+      const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+      const index = keranjang.findIndex(item =>
+        item.nama === produk.nama &&
+        item.warna === produk.warna &&
+        item.ukuran === produk.ukuran
+      );
+
+      if (index !== -1) {
+        keranjang[index].jumlah += produk.jumlah;
+      } else {
+        keranjang.push(produk);
+      }
+
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      alert("Produk berhasil ditambahkan ke keranjang!");
+    });
+  </script>
+
+  <!-- Beli Sekarang -->
+  <script>
+    document.querySelector(".btn-buy-now").addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stokProduk = JSON.parse(localStorage.getItem("stokProduk")) || {};
+
+      if (!stokProduk[key] || stokProduk[key] < jumlah) {
+        alert("Stok tidak mencukupi. Silakan kurangi jumlah atau pilih varian lain.");
+        return;
+      }
+
+      stokProduk[key] -= jumlah;
+      localStorage.setItem("stokProduk", JSON.stringify(stokProduk));
+
+      const produk = {
+        nama: "Gamis Wanita Modern",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp90.525"
+      };
+
+      localStorage.setItem("checkoutProduk", JSON.stringify([produk]));
+      window.location.href = "checkout.html";
+    });
+  </script>
+</body>
+</html>

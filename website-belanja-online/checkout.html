@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - TokoKu</title>
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Checkout</h2>
+
+    <!-- Ringkasan Produk -->
+    <div class="section">
+      <h3>Produk Dibeli</h3>
+      <div id="produk-list"></div>
+      <p class="total">Total: Rp0</p>
+    </div>
+
+    <!-- Alamat Pengiriman -->
+    <div class="section">
+      <h3>Alamat Pengiriman</h3>
+      <textarea id="alamat" placeholder="Masukkan alamat lengkap..." required></textarea>
+    </div>
+
+    <!-- Metode Pembayaran -->
+    <div class="section">
+      <h3>Metode Pembayaran</h3>
+      <select id="payment-method" required>
+        <option value="">Pilih metode pembayaran</option>
+        <option value="cod">Bayar di Tempat (COD)</option>
+        <option value="transfer">Transfer Bank</option>
+        <option value="ewallet">E-Wallet (OVO, Dana, GoPay)</option>
+        <option value="qris">QRIS</option>
+      </select>
+    </div>
+
+    <!-- Tombol Bayar -->
+    <button class="pay-btn" id="pay-btn" onclick="submitCheckout()" disabled>Bayar Sekarang</button>
+  </div>
+
+<script>
+  const produkList = document.getElementById("produk-list");
+  const totalElem = document.querySelector(".total");
+  const payBtn = document.getElementById("pay-btn");
+
+  // Ambil data dari localStorage
+  const checkoutProduk = JSON.parse(localStorage.getItem("checkoutProduk"));
+  const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+
+  let cart = [];
+
+  if (checkoutProduk && checkoutProduk.length > 0) {
+    cart = Array.isArray(checkoutProduk) ? checkoutProduk : [checkoutProduk];
+  } else if (keranjang.length > 0) {
+    cart = keranjang;
+  }
+
+  let total = 0;
+
+  // Render produk
+  if (cart.length === 0) {
+    produkList.innerHTML = "<p>Tidak ada produk untuk checkout. Silakan kembali ke keranjang.</p>";
+    payBtn.disabled = true;
+
+  } else {
+          cart.forEach(item => {
+      const hargaAngka = parseInt(item.harga.replace(/[^\d]/g, ""));
+      const subtotal = item.jumlah * hargaAngka;
+      total += subtotal;
+
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `
+        <div class="item-details">
+          <p><strong>${item.nama}</strong></p>
+          <p>Qty: ${item.jumlah} x Rp${hargaAngka.toLocaleString()}</p>
+        </div>
+        <p>Rp${subtotal.toLocaleString()}</p>
+      `;
+      produkList.appendChild(div);
+    });
+
+    totalElem.textContent = "Total: Rp" + total.toLocaleString();
+    payBtn.disabled = false;
+  }
+
+  function validateCheckout() {
+    const alamat = document.getElementById('alamat').value.trim();
+    const method = document.getElementById('payment-method').value;
+
+    if (!alamat || !method) {
+      alert("Silakan isi alamat pengiriman dan pilih metode pembayaran.");
+      return false;
+    }
+    return true;
+  }
+
+  function submitCheckout() {
+    if (!validateCheckout()) return;
+
+    const method = document.getElementById('payment-method').value;
+    const alamat = document.getElementById('alamat').value.trim();
+
+    const checkoutData = {
+      produk: cart,
+      total: total,
+      alamat: alamat,
+      metode: method
+    };
+
+    localStorage.setItem("checkoutData", JSON.stringify(checkoutData));
+
+    fetch('data_checkout.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(checkoutData)
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.status === 'success') {
+        // Bersihkan data checkout jika sukses
+        localStorage.removeItem("checkoutProduk");
+        localStorage.removeItem("keranjang");
+        window.location.href = "invoice.html";
+      } else {
+        alert('Gagal menyimpan ke database: ' + result.message);
+      }
+    })
+    .catch(error => {
+      alert('Terjadi kesalahan koneksi dengan server.');
+      console.error(error);
+    });
+  }
+</script>
+
+</body>
+</html>

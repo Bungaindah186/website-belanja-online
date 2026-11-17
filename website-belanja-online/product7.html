@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail Produk - Louvee Skirt</title>
+  <link rel="stylesheet" href="product1.css">
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/jyktd73zrkvqelok3ve14/foto7.jpg?rlkey=gw5jz3fzdmomn0pomd1689jmc&st=yz3uoqw9&dl=1" alt="Louvee Skirt">
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/jyktd73zrkvqelok3ve14/foto7.jpg?rlkey=gw5jz3fzdmomn0pomd1689jmc&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/ospp5blugw388ppueen21/foto7.1.jpg?rlkey=847iov53b1f8tdve1w8294nhx&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/xt0etokl2rt78o9hggagv/foto7.2.jpg?rlkey=qa3aydu28q5cfvx2jby59f2el&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/qw3jwwenluaib34gy9k6r/foto7.3.jpg?rlkey=r3beu439v2klga565bpexk2wc&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/qbfs57qfgys548i0omlwq/foto7.4.jpg?rlkey=l157awe09yoqmjy0ve1o6rd3g&dl=1" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Louvee-Flowy Skirt Rok Wanita Rempel A Line Kekinian Style Wanita Panjang Tebal Waist Premium Casual</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp92.500</span>
+          <span class="price-original">Rp199.000</span>
+          <span class="price-off">-54%</span>
+        </div>
+        <p class="ic">6538 terjual online</p>
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ☆</div>
+          <div class="review-count">4.8 | 930 ulasan</div>
+        </div>
+        <p id="stok-info">Stok tersedia: </p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Khaki</option>
+            <option>Cream</option>
+            <option>Hitam</option>
+            <option>Bw</option>
+            <option>Dark Milo</option>
+            <option>Beige</option>
+            <option>Ivory</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>M Pinggang 64-86cm panjang bawahan 85cm Berat 42-50kg</option>
+            <option>L Pinggang 66-90cm Panjang bawahan 85cm Berat 51-55kg</option>
+            <option>XL Pinggang 70-98cm panjang bawahan 85cm Berat 56-60kg</option>
+            <option>XXL Pinggang 74-102 panjang bawahan 85cm Berat 61-70kg</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1">
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (4,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p><strong>Louvee Midi Skirt</strong> hadir dengan desain A-Line yang cocok untuk wanita berhijab. Terbuat dari bahan <strong>Semiwool Premium</strong> yang adem dan elastis ringan.</p>
+      <ul>
+        <li>Desain polos dengan aksen kancing & pinggang asimetris</li>
+        <li>A-Line Maxi Skirt, hijab friendly</li>
+        <li>Bahan Semiwool tebal, adem & tidak menerawang</li>
+        <li>Karet belakang untuk kenyamanan ekstra</li>
+        <li>Cocok untuk gaya formal & casual</li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+  const defaultStok = {
+    "Khaki_M Pinggang 64-86cm panjang bawahan 85cm Berat 42-50kg": 200,
+    "Khaki_L Pinggang 66-90cm Panjang bawahan 85cm Berat 51-55kg": 200,
+    "Cream_M Pinggang 64-86cm panjang bawahan 85cm Berat 42-50kg": 200,
+    "Hitam_XL Pinggang 70-98cm panjang bawahan 85cm Berat 56-60kg": 200,
+    "Ivory_XXL Pinggang 74-102 panjang bawahan 85cm Berat 61-70kg": 200,
+    // tambahkan sesuai kebutuhan
+  };
+
+  if (!localStorage.getItem("stokProdukLouvee")) {
+    localStorage.setItem("stokProdukLouvee", JSON.stringify(defaultStok));
+  }
+
+  function updateStokInfo() {
+    const warna = document.getElementById("warna").value;
+    const ukuran = document.getElementById("ukuran").value;
+    const key = `${warna}_${ukuran}`;
+    const stokData = JSON.parse(localStorage.getItem("stokProdukLouvee")) || {};
+    const stok = stokData[key] ?? 0;
+
+    document.getElementById("stok-info").textContent = `Stok tersedia: ${stok}`;
+    const jumlahInput = document.getElementById("jumlah");
+    jumlahInput.max = stok;
+    if (stok === 0) jumlahInput.value = 0;
+    if (parseInt(jumlahInput.value) > stok) jumlahInput.value = stok;
+  }
+
+  document.getElementById("warna").addEventListener("change", updateStokInfo);
+  document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+  window.onload = updateStokInfo;
+
+  document.querySelector(".btn-cart").addEventListener("click", function () {
+    const produk = {
+      nama: document.querySelector(".product-title").textContent,
+      warna: document.getElementById("warna").value,
+      ukuran: document.getElementById("ukuran").value,
+      jumlah: parseInt(document.getElementById("jumlah").value),
+      harga: "Rp92.500",
+    };
+
+    const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+    const index = keranjang.findIndex(p => p.nama === produk.nama && p.warna === produk.warna && p.ukuran === produk.ukuran);
+    if (index !== -1) {
+      keranjang[index].jumlah += produk.jumlah;
+    } else {
+      keranjang.push(produk);
+    }
+
+    localStorage.setItem("keranjang", JSON.stringify(keranjang));
+    alert("Produk berhasil ditambahkan ke keranjang!");
+  });
+
+  document.querySelector(".btn-buy-now").addEventListener("click", function (e) {
+    e.preventDefault();
+    const produk = {
+      nama: document.querySelector(".product-title").textContent,
+      warna: document.getElementById("warna").value,
+      ukuran: document.getElementById("ukuran").value,
+      jumlah: parseInt(document.getElementById("jumlah").value),
+      harga: "Rp92.500",
+    };
+    if (!produk.warna || !produk.ukuran) {
+      alert("Silakan pilih warna dan ukuran terlebih dahulu.");
+      return;
+    }
+
+    localStorage.setItem("checkoutProduk", JSON.stringify([produk]));
+    window.location.href = "checkout.html";
+  });
+
+  function changeImage(element) {
+    document.getElementById("mainImage").src = element.src;
+  }
+</script>
+
+</body>
+</html>

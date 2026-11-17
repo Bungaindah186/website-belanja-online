@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk - Knit Bear By Hoodiebear</title>
+  <link rel="stylesheet" href="product1.css" />
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img
+      src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1"
+      alt="Logo"
+      width="100px"
+    />
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img
+          id="mainImage"
+          src="https://www.dropbox.com/scl/fi/fhqrtiy75s9944hmzls2m/foro12.jpg?rlkey=epmn267h0kqjj1ub4mxn6zghu&st=cok42sa6&dl=1"
+          alt="Gamis Wanita Modern"
+        />
+        <div class="thumbnail-gallery">
+          <img
+            src="https://www.dropbox.com/scl/fi/fhqrtiy75s9944hmzls2m/foro12.jpg?rlkey=epmn267h0kqjj1ub4mxn6zghu&st=cok42sa6&dl=1"
+            onclick="changeImage(this)"
+          />
+          <img
+            src="https://www.dropbox.com/scl/fi/193zgpjclbpcvare4tzko/foto12.1.jpg?rlkey=j90gytrw2gavg805rp8f69zfp&st=41p5jjc3&dl=1"
+            onclick="changeImage(this)"
+          />
+          <img
+            src="https://www.dropbox.com/scl/fi/69mtgfefyqm26o61blh0x/foto12.2.jpg?rlkey=cbh4qhlibvyvc8h7v306c7g78&st=zqthehea&dl=1"
+            onclick="changeImage(this)"
+          />
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Knit Bear By Hoodiebear X Aruna</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp96.030</span>
+          <span class="price-original">Rp125.000</span>
+          <span class="price-off">-23%</span>
+        </div>
+        <p class="ic">100 terjual online</p>
+
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+          <div class="review-count">5.0 | 1.0017 ulasan</div>
+        </div>
+
+        <p id="stok-info">Stok tersedia:</p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Honey Bear</option>
+            <option>Black Bear</option>
+            <option>Coffee Bear</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>All Size LD 110cm PB 60cm</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1" />
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (4,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Tampil hangat dan menggemaskan dalam satu gaya?
+        <strong>Knit Bear dari Hoodiebear</strong> adalah pilihan tepat buat kamu
+        yang ingin look kasual yang nyaman untuk aktivitas sehari-hari.
+      </p>
+      <ul>
+        <li><strong>Merek:</strong> Hoodiebear</li>
+        <li>
+          <strong>Material:</strong> Rajut komputer stretch – adem, lentur, dan
+          tidak menerawang
+        </li>
+        <li><strong>Lingkar Dada:</strong> 110 cm</li>
+        <li><strong>Panjang Baju:</strong> 60 cm</li>
+        <li><strong>Panjang Lengan:</strong> 57 cm</li>
+        <li><strong>Style:</strong> Simpel dan cocok untuk gaya santai harian</li>
+      </ul>
+      <p>
+        Knit Bear ini pas banget dipakai buat ke kampus, nongkrong, atau sekadar
+        chill di rumah. Wajib punya di koleksi outfit harianmu!
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Inisialisasi stok produk jika belum ada di localStorage
+    if (!localStorage.getItem("stokKnitBear")) {
+      const warnaList = ["Honey Bear", "Black Bear", "Coffee Bear"];
+      const ukuranList = ["All Size LD 110cm PB 60cm"];
+      const stok = {};
+
+      warnaList.forEach((warna) => {
+        ukuranList.forEach((ukuran) => {
+          stok[`${warna}_${ukuran}`] = 300; 
+        });
+      });
+
+      localStorage.setItem("stokKnitBear", JSON.stringify(stok));
+    }
+
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokKnitBear")) || {};
+      const sisa = stok[key] || 0;
+
+      document.getElementById("stok-info").textContent = `Stok tersedia: ${sisa}`;
+
+      const jumlahInput = document.getElementById("jumlah");
+      jumlahInput.max = sisa;
+      if (jumlahInput.value < 1) jumlahInput.value = 1;
+      if (jumlahInput.value > sisa) jumlahInput.value = sisa;
+
+      document.querySelector(".btn-cart").disabled = sisa === 0;
+      document.querySelector(".btn-buy-now").disabled = sisa === 0;
+    }
+
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", updateStokInfo);
+    window.onload = updateStokInfo;
+
+    document.querySelector(".btn-cart").addEventListener("click", function () {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokKnitBear"));
+
+      if (jumlah > stok[key]) {
+        alert("Jumlah melebihi stok!");
+        return;
+      }
+
+      stok[key] -= jumlah;
+      localStorage.setItem("stokKnitBear", JSON.stringify(stok));
+
+      const produk = {
+        nama: "Knit Bear By Hoodiebear X Aruna",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp96.030",
+      };
+
+      const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+      const index = keranjang.findIndex(
+        (item) =>
+          item.nama === produk.nama &&
+          item.warna === warna &&
+          item.ukuran === ukuran
+      );
+
+      if (index !== -1) {
+        keranjang[index].jumlah += jumlah;
+      } else {
+        keranjang.push(produk);
+      }
+
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      alert("Produk berhasil ditambahkan ke keranjang!");
+      updateStokInfo();
+    });
+
+    document
+      .querySelector(".btn-buy-now")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        const warna = document.getElementById("warna").value;
+        const ukuran = document.getElementById("ukuran").value;
+        const jumlah = parseInt(document.getElementById("jumlah").value);
+        const key = `${warna}_${ukuran}`;
+        const stok = JSON.parse(localStorage.getItem("stokKnitBear"));
+
+        if (jumlah > stok[key]) {
+          alert("Jumlah melebihi stok!");
+          return;
+        }
+
+        stok[key] -= jumlah;
+        localStorage.setItem("stokKnitBear", JSON.stringify(stok));
+
+        const produk = [
+          {
+            nama: "Knit Bear By Hoodiebear X Aruna",
+            warna,
+            ukuran,
+            jumlah,
+            harga: "Rp96.030",
+          },
+        ];
+
+        localStorage.setItem("checkoutProduk", JSON.stringify(produk));
+        window.location.href = "checkout.html";
+      });
+
+    function changeImage(el) {
+      document.getElementById("mainImage").src = el.src;
+    }
+  </script>
+</body>
+</html>

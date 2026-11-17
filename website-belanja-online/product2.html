@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail Produk - Ayumi</title>
+  <link rel="stylesheet" href="product1.css">
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/tt3a7mock23elmni5062n/foto2.jpg?rlkey=0gan6d7eq2urrzw2owk81svjq&st=jck0yg7f&dl=1" alt="Gamis Wanita Modern">
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/tt3a7mock23elmni5062n/foto2.jpg?rlkey=0gan6d7eq2urrzw2owk81svjq&st=jck0yg7f&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/n67wmarxoz12l0da02904/foto2.2.jpg?rlkey=wejjjtknb8xth972fcwzcnx4n&st=s47qd1i6&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/ky1x5nfj6yy3wd64m90mv/foto2.1.jpg?rlkey=bv360c8i9rhpf0mhehuy62sm0&st=e5u73c9d&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/sy1whrexi0ts6prsmry9y/foto-2.5.jpg?rlkey=mp1c1ewo2voke9bkb73e2of1j&st=m27amozo&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/kxtugxiyidadustekdq8a/foto-2.4.jpg?rlkey=qlmzepv98es08x6rz0e22cq47&st=h73uqwot&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/3l7vvzm61apmiffugkm0o/foto-2.3.jpg?rlkey=lwx75cvc9rb60bf18j9ljlfdg&st=0vk0yp8k&dl=1" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Ayumi Dress Sailor Gamis Yearbook ala korean style</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp230.000</span>
+          <span class="price-original">Rp250.000</span>
+          <span class="price-off">-8%</span>
+        </div>
+        <p class="ic">200 terjual online</p>
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐ </div>
+          <div class="review-count">4.9 | 2.298 ulasan</div>
+        </div>
+        <p id="stok-info">Stok tersedia: </p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Ayumi Penaut</option>
+            <option>Ayumi Vanila</option>
+            <option>Ayumi Milo</option>
+            <option>Ayumi Caramel</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>S : Pjg 130cm LD 100 PL 57</option>
+            <option>M : pjg 125cm LD 100 PL 56</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1">
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (4,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Koleksi terbaru setelah Lebaran? <strong>Ada dong!</strong> Saatnya kamu kenalan dengan <strong>Ayumi Dress</strong>,
+        gamis modis terbaru yang menghadirkan nuansa unik dan elegan. Sama seperti Lulla Dress, Ayumi hadir dengan desain
+        <em>vest yang menyatu dengan dress</em>—praktis dan tetap stylish!
+      </p>
+      <p>
+        Dengan desain yang eye-catching, Ayumi cocok banget dijadikan <strong>OOTD Yearbook</strong> kamu.
+        Tampil beda dan lebih menawan dari biasanya? Bisa banget dengan Ayumi Dress!
+      </p>
+      <ul>
+        <li><strong>Bahan:</strong> Bottom Stretch mix Linen Premium</li>
+        <li><strong>Size S:</strong> Panjang 125 cm, Lingkar Dada 100 cm, Panjang Lengan 56 cm</li>
+        <li><strong>Size M:</strong> Panjang 130 cm, Lingkar Dada 100 cm, Panjang Lengan 57 cm</li>
+        <li><strong>Bonus:</strong> Free Dasi Pita khusus selama promo launching 12–13 April 2025</li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+  // Inisialisasi stok jika belum ada
+  if (!localStorage.getItem("stokProdukAyumi")) {
+    const stokAwal = {
+      "Ayumi Penaut_S : Pjg 130cm LD 100 PL 57": 500,
+      "Ayumi Penaut_M : pjg 125cm LD 100 PL 56": 500,
+      "Ayumi Vanila_S : Pjg 130cm LD 100 PL 57": 500,
+      "Ayumi Vanila_M : pjg 125cm LD 100 PL 56": 500,
+      "Ayumi Milo_S : Pjg 130cm LD 100 PL 57": 500,
+      "Ayumi Milo_M : pjg 125cm LD 100 PL 56": 500,
+      "Ayumi Caramel_S : Pjg 130cm LD 100 PL 57": 500,
+      "Ayumi Caramel_M : pjg 125cm LD 100 PL 56": 500
+    };
+    localStorage.setItem("stokProdukAyumi", JSON.stringify(stokAwal));
+  }
+
+  function updateStokInfo() {
+    const warna = document.getElementById("warna").value;
+    const ukuran = document.getElementById("ukuran").value;
+    const key = `${warna}_${ukuran}`;
+    const stokProduk = JSON.parse(localStorage.getItem("stokProdukAyumi")) || {};
+    const stok = stokProduk[key] ?? 0;
+
+    const stokInfo = document.getElementById("stok-info");
+    stokInfo.textContent = `Stok tersedia: ${stok}`;
+
+    const jumlahInput = document.getElementById("jumlah");
+    jumlahInput.max = stok;
+
+    // Batasi jumlah input minimal 1 dan maksimal stok
+    if (jumlahInput.value === "" || parseInt(jumlahInput.value) < 1) jumlahInput.value = 1;
+    if (parseInt(jumlahInput.value) > stok) jumlahInput.value = stok;
+
+    // Disable tombol jika stok 0
+    const btnCart = document.querySelector(".btn-cart");
+    const btnBuyNow = document.querySelector(".btn-buy-now");
+    if (stok === 0) {
+      btnCart.disabled = true;
+      btnBuyNow.disabled = true;
+      btnCart.style.opacity = 0.6;
+      btnBuyNow.style.opacity = 0.6;
+    } else {
+      btnCart.disabled = false;
+      btnBuyNow.disabled = false;
+      btnCart.style.opacity = 1;
+      btnBuyNow.style.opacity = 1;
+    }
+  }
+
+  // Event listener untuk validasi input jumlah
+  const jumlahInput = document.getElementById("jumlah");
+  jumlahInput.addEventListener("input", () => {
+    const max = parseInt(jumlahInput.max);
+    let val = parseInt(jumlahInput.value);
+    if (isNaN(val) || val < 1) val = 1;
+    if (val > max) val = max;
+    jumlahInput.value = val;
+    updateStokInfo();
+  });
+
+  // Update stok saat warna/ukuran berubah
+  document.getElementById("warna").addEventListener("change", updateStokInfo);
+  document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+
+  window.onload = updateStokInfo;
+
+  // Fungsi tambah ke keranjang dengan validasi stok lebih ketat
+  document.querySelector(".btn-cart").addEventListener("click", function () {
+    const warna = document.getElementById("warna").value;
+    const ukuran = document.getElementById("ukuran").value;
+    const jumlah = parseInt(document.getElementById("jumlah").value);
+    const key = `${warna}_${ukuran}`;
+    const stokProduk = JSON.parse(localStorage.getItem("stokProdukAyumi")) || {};
+
+    if (!stokProduk[key] || stokProduk[key] < jumlah) {
+      alert("Stok tidak mencukupi.");
+      return;
+    }
+
+    const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+    const produkNama = "Ayumi Dress Sailor Gamis Yearbook ala korean style";
+    const index = keranjang.findIndex(item =>
+      item.nama === produkNama && item.warna === warna && item.ukuran === ukuran
+    );
+
+    // Jika produk sudah ada di keranjang, cek stok tersisa sebelum tambah jumlah
+    if (index !== -1) {
+      if (stokProduk[key] < jumlah) {
+        alert("Stok tidak mencukupi untuk menambah jumlah produk ini.");
+        return;
+      }
+      keranjang[index].jumlah += jumlah;
+    } else {
+      keranjang.push({
+        nama: produkNama,
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp230.000"
+      });
+    }
+
+    // Kurangi stok
+    stokProduk[key] -= jumlah;
+    stokProduk[key] = Math.max(0, stokProduk[key]);
+    localStorage.setItem("stokProdukAyumi", JSON.stringify(stokProduk));
+    localStorage.setItem("keranjang", JSON.stringify(keranjang));
+
+    updateStokInfo();
+    alert("Produk berhasil ditambahkan ke keranjang!");
+  });
+
+  // Fungsi beli sekarang dengan validasi stok
+  document.querySelector(".btn-buy-now").addEventListener("click", function (e) {
+    e.preventDefault();
+    const warna = document.getElementById("warna").value;
+    const ukuran = document.getElementById("ukuran").value;
+    const jumlah = parseInt(document.getElementById("jumlah").value);
+    const key = `${warna}_${ukuran}`;
+    const stokProduk = JSON.parse(localStorage.getItem("stokProdukAyumi")) || {};
+
+    if (!stokProduk[key] || stokProduk[key] < jumlah) {
+      alert("Stok tidak mencukupi.");
+      return;
+    }
+
+    // Kurangi stok
+    stokProduk[key] -= jumlah;
+    stokProduk[key] = Math.max(0, stokProduk[key]);
+    localStorage.setItem("stokProdukAyumi", JSON.stringify(stokProduk));
+
+    const produk = {
+      nama: "Ayumi Dress Sailor Gamis Yearbook ala korean style",
+      warna,
+      ukuran,
+      jumlah,
+      harga: "Rp230.000"
+    };
+
+    localStorage.setItem("checkoutProduk", JSON.stringify([produk]));
+    updateStokInfo();
+    window.location.href = "checkout.html";
+  });
+
+  // Fungsi ganti gambar utama
+  function changeImage(element) {
+    document.getElementById('mainImage').src = element.src;
+  }
+</script>
+</body>
+</html>

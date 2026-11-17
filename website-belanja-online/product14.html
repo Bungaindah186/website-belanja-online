@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk - Comfy Cardy</title>
+  <link rel="stylesheet" href="product1.css" />
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px" />
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/njy0eihm0d76sbgwfkc4f/foto14.jpg?rlkey=ztxdxxr7gbc8f4m6uykltfzr0&st=cu8tpol5&dl=1" alt="Comfy Cardy By Arunaoutfit" />
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/njy0eihm0d76sbgwfkc4f/foto14.jpg?rlkey=ztxdxxr7gbc8f4m6uykltfzr0&st=cu8tpol5&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/42iqb3tqslmhbs6nawvb1/foto14.1.jpg?rlkey=3u6n9t5n5se20hj3whymyg32j&st=jqyfzib4&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/t0elnth4fcak2fn73kn7n/foto14.2.jpg?rlkey=dd8sm35e59fn3636zgo9a4tbb&st=lcnqp3lz&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/n9qge4fg145iefolh7tgx/foto14.3.jpg?rlkey=lqg955renvkncveqvo3xmubwv&st=upj9bp1p&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/fbhu0u5m9as200e0776vo/foto14.4.jpg?rlkey=iu1ug5xik8yjeb79wutsvrj42&st=idtkcws7&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/g7wffwnc54yclhg5h82vj/foto14.5.jpg?rlkey=sfer6fde6i72byctek9bc5hvq&st=luldlcli&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/mpls3ilcclc5hf69cskcc/foto14.6.jpg?rlkey=8crb8ytm4xe022136rya4upla&st=xe5773ve&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/fvq4grmecand0ptd5xv3t/foto14.7.jpg?rlkey=y1isrmao4n7lc29i7khcyavk7&st=rcaj3jjb&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/888c1w98qdc8jsjsnvbak/foto14.8.jpg?rlkey=pzgd6ggpo552xmz2cmsa25sm4&st=xywylkgn&dl=1" onclick="changeImage(this)" />
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Comfy Cardy By Arunaoutfit</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp78.750</span>
+          <span class="price-original">Rp89.000</span>
+          <span class="price-off">-17%</span>
+        </div>
+        <p class="ic">1617 terjual online</p>
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+          <div class="review-count">4.9 | 1.0017 ulasan</div>
+        </div>
+        <p id="stok-info">Stok tersedia:</p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Brick Choco</option>
+            <option>Emerald</option>
+            <option>Denim Blue</option>
+            <option>Shadow Cream</option>
+            <option>Dark Olive</option>
+            <option>Moon Black</option>
+            <option>Brick Choco set + Rok</option>
+            <option>Emerald set + Rok</option>
+            <option>Denim Blue set + Inner</option>
+            <option>Shadow Cream set + Rok</option>
+            <option>Dark Olive set + Inner</option>
+            <option>Moon Black set + Inner</option>
+            <option>Shadow Cream List Black</option>
+            <option>Shadow Cream List Black + Rok</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>All Size Panjang Atasan 65cm Dada 130cm</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1" />
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (4,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Lagi cari outer simple tapi tetap comfy dan stylish? <strong>Comfy Cardy Simple With List</strong> dari <strong>arunaoutfit</strong> bisa jadi pilihan andalanmu!
+      </p>
+      <ul>
+        <li><strong>Material:</strong> Fleece – lembut, nyaman, dan cukup hangat</li>
+        <li><strong>Desain:</strong> Model basic dengan aksen list yang clean</li>
+        <li><strong>Lengan:</strong> Loose fit + kancing manis di bagian pergelangan</li>
+        <li><strong>Fitur Tambahan:</strong>
+          <ul>
+            <li>Full kancing aktif – bisa dijadikan outer atau dipakai tertutup</li>
+            <li>Saku kanan & kiri – fungsional dan kasual</li>
+          </ul>
+        </li>
+        <li><strong>Ukuran:</strong> Allsize fit to XL</li>
+        <li><strong>Spesifikasi Ukuran:</strong>
+          <ul>
+            <li>Lingkar Dada: 130 cm</li>
+            <li>Panjang Baju: ±65 cm</li>
+            <li>Panjang Tangan: ±56 cm</li>
+            <li>Lingkar Ketiak: 46 cm</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        Tersedia dalam beberapa pilihan warna favorit—siap jadi item andalan untuk layering santai harianmu. Yuk, tentukan warna incaranmu sekarang, nenk!
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Inisialisasi stok untuk Comfy Cardy
+    if (!localStorage.getItem("stokComfyCardy")) {
+      const warnaList = [
+        "Brick Choco", "Emerald", "Denim Blue", "Shadow Cream",
+        "Dark Olive", "Moon Black", "Brick Choco set + Rok",
+        "Emerald set + Rok", "Denim Blue set + Inner", "Shadow Cream set + Rok",
+        "Dark Olive set + Inner", "Moon Black set + Inner",
+        "Shadow Cream List Black", "Shadow Cream List Black + Rok"
+      ];
+      const ukuran = "All Size Panjang Atasan 65cm Dada 130cm";
+      const stok = {};
+      warnaList.forEach(w => {
+        stok[`${w}_${ukuran}`] = 500;
+      });
+      localStorage.setItem("stokComfyCardy", JSON.stringify(stok));
+    }
+
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokComfyCardy")) || {};
+      const sisa = stok[key] || 0;
+
+      document.getElementById("stok-info").textContent = `Stok tersedia: ${sisa}`;
+      const jumlahInput = document.getElementById("jumlah");
+      if (sisa === 0) {
+        jumlahInput.value = 0;
+        jumlahInput.disabled = true;
+        btnCart.disabled = true;
+        btnBuyNow.disabled = true;
+      } else {
+        jumlahInput.disabled = false;
+        if (parseInt(jumlahInput.value) > sisa) {
+          jumlahInput.value = sisa;
+        }
+        btnCart.disabled = false;
+        btnBuyNow.disabled = false;
+      }
+    }
+
+    function changeImage(element) {
+      document.getElementById("mainImage").src = element.src;
+    }
+
+    const btnCart = document.querySelector(".btn-cart");
+    const btnBuyNow = document.querySelector(".btn-buy-now");
+
+    btnCart.addEventListener("click", () => {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      if (jumlah < 1) {
+        alert("Jumlah harus minimal 1");
+        return;
+      }
+
+      let stok = JSON.parse(localStorage.getItem("stokComfyCardy"));
+      const key = `${warna}_${ukuran}`;
+      if (!stok[key] || stok[key] < jumlah) {
+        alert("Stok tidak cukup");
+        return;
+      }
+
+      // Kurangi stok
+      stok[key] -= jumlah;
+      localStorage.setItem("stokComfyCardy", JSON.stringify(stok));
+
+      // Simpan keranjang di localStorage
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ produk: "Comfy Cardy By Arunaoutfit", warna, ukuran, jumlah, harga: 78750 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      alert("Produk berhasil ditambahkan ke keranjang");
+      updateStokInfo();
+    });
+
+btnBuyNow.addEventListener("click", () => {
+  const warna = document.getElementById("warna").value;
+  const ukuran = document.getElementById("ukuran").value;
+  const jumlah = parseInt(document.getElementById("jumlah").value);
+  if (jumlah < 1) {
+    alert("Jumlah harus minimal 1");
+    return;
+  }
+
+  let stok = JSON.parse(localStorage.getItem("stokComfyCardy"));
+  const key = `${warna}_${ukuran}`;
+  if (!stok[key] || stok[key] < jumlah) {
+    alert("Stok tidak cukup");
+    return;
+  }
+
+  // Kurangi stok
+  stok[key] -= jumlah;
+  localStorage.setItem("stokComfyCardy", JSON.stringify(stok));
+
+  // Simpan pembelian ke keranjang juga, biar checkout bisa baca
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ produk: "Comfy Cardy By Arunaoutfit", warna, ukuran, jumlah, harga: 78750 });
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Langsung arahkan ke halaman checkout
+  window.location.href = "checkout.html";
+});
+
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", () => {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlahInput = document.getElementById("jumlah");
+      const stok = JSON.parse(localStorage.getItem("stokComfyCardy"));
+      const key = `${warna}_${ukuran}`;
+      const sisa = stok[key] || 0;
+
+      if (parseInt(jumlahInput.value) > sisa) {
+        jumlahInput.value = sisa;
+      }
+      if (parseInt(jumlahInput.value) < 1) {
+        jumlahInput.value = 1;
+      }
+    });
+
+    // Inisialisasi tampilan stok saat halaman dimuat
+    updateStokInfo();
+  </script>
+</body>
+</html>

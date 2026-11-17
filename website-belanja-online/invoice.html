@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice - TokoKu</title>
+  <link rel="stylesheet" href="invoice.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h2>Invoice Pembelian</h2>
+  </header>
+
+  <section class="produk">
+    <h3>Produk Dibeli</h3>
+    <div id="produk-list"></div>
+    <p class="total">Total: Rp0</p>
+  </section>
+
+  <section class="alamat">
+    <h3>Alamat Pengiriman</h3>
+    <p id="alamat"></p>
+  </section>
+
+  <section class="payment">
+    <h3>Metode Pembayaran</h3>
+    <p id="payment-method"></p>
+  </section>
+
+  <footer> <b>
+    <button onclick="goToHome()">Kembali ke Beranda</button>
+  </footer> </b>
+</div>
+
+<script>
+  const checkoutData = JSON.parse(localStorage.getItem("checkoutData"));
+  const produkList = document.getElementById("produk-list");
+  const totalElem = document.querySelector(".total");
+  const alamatElem = document.getElementById("alamat");
+  const paymentMethodElem = document.getElementById("payment-method");
+
+  if (checkoutData) {
+    // Tampilkan produk
+    checkoutData.produk.forEach(item => {
+      const subtotal = item.jumlah * parseInt(item.harga.replace(/[^\d]/g, ""));
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `
+        <div class="item-details">
+          <p><strong>${item.nama}</strong></p>
+          <p>Qty: ${item.jumlah} x Rp${parseInt(item.harga.replace(/[^\d]/g, "")).toLocaleString()}</p>
+        </div>
+        <p>Rp${subtotal.toLocaleString()}</p>
+      `;
+      produkList.appendChild(div);
+    });
+
+    // Total Harga
+    totalElem.textContent = "Total: Rp" + checkoutData.total.toLocaleString();
+
+    // Tampilkan alamat
+    alamatElem.textContent = checkoutData.alamat;
+
+    // Tampilkan metode pembayaran
+    const metodePembayaran = {
+      cod: "Bayar di Tempat (COD)",
+      transfer: "Transfer Bank",
+      ewallet: "E-Wallet (OVO, Dana, GoPay)",
+      qris: "QRIS"
+    };
+    paymentMethodElem.textContent = metodePembayaran[checkoutData.metode] || "Metode Pembayaran Tidak Diketahui";
+  } else {
+    produkList.innerHTML = "<p>Data checkout tidak ditemukan.</p>";
+  }
+
+  function goToHome() {
+    window.location.href = "home2.php"; 
+  }
+</script>
+
+</body>
+</html>

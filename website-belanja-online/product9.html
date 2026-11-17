@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk - Korean Cardigan Premium</title>
+  <link rel="stylesheet" href="product1.css" />
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px" />
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/6edkkdtaetutcahknv8h6/foro9.jpg?rlkey=5z5rw25sblxpch82nmx55y1y5&st=ncm4wroa&dl=1" alt="Korean Cardigan Premium Dark Academia" />
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/m5booqy20y8fbnu3e3caz/foto9.1.jpg?rlkey=gfvzllyu45l0f8malnhgc8w34&st=tcjnvt0p&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/4k2j6tqtldgeed8m7f83v/foto9.2.jpg?rlkey=oxdqmkdb1whe3ijdhnz3n83oe&st=2p1qxoqg&dl=1" onclick="changeImage(this)" />
+          <img src="https://www.dropbox.com/scl/fi/i7s9hhi37zbq7en9fyayj/foto9.3.jpg?rlkey=vensfsgruvq1jcumkeaeqyg7b&st=ai1j0eon&dl=1" onclick="changeImage(this)" />
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Korean Cardigan Premium Dark Academia Series</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp125.000</span>
+        </div>
+        <p class="ic">1182 terjual online</p>
+
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+          <div class="review-count">4.9 | 20.0817 ulasan</div>
+        </div>
+
+        <p id="stok-info">Stok tersedia:</p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Black</option>
+            <option>Walnut</option>
+            <option>Espresso</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>Satu ukuran panjang 60cm Dada 110cm</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1" />
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (4,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Tampil ala Korean look dengan <strong>Korean Style Cardigan Premium</strong> dari <strong>ArunaOutfit</strong>. Cardigan rajut ini hadir dengan desain simple dan elegan, cocok untuk kamu yang ingin tampil modis namun tetap nyaman.
+      </p>
+
+      <ul>
+        <li><strong>Desain:</strong> Model loose dengan potongan tangan longgar</li>
+        <li><strong>Panjang Lengan:</strong> 55 cm</li>
+        <li><strong>Lingkar Dada:</strong> 110 cm+ (bisa stretch)</li>
+        <li><strong>Panjang Cardigan:</strong> 60 cm</li>
+        <li><strong>Gaya:</strong> Korean Casual – cocok untuk daily outfit atau hangout santai</li>
+        <li><strong>Material:</strong> Rajut Komputer Premium (tebal, serat rapat, tidak nerawang)</li>
+      </ul>
+
+      <p>
+        Cardigan ini sangat cocok dipadukan dengan outfit apapun, mulai dari jeans hingga rok plisket. Material rajutnya nyaman di kulit dan tidak membuat gerah, menjadikannya pilihan tepat untuk dipakai sehari-hari.
+      </p>
+
+      <p><em>Upgrade gaya kasualmu dengan cardigan kekinian dari ArunaOutfit sekarang juga!</em></p>
+    </div>
+  </div>
+
+  <script>
+    // Inisialisasi stok produk per warna dan ukuran
+    if (!localStorage.getItem("stokCardigan")) {
+      const warnaList = ["Black", "Walnut", "Espresso"];
+      const stok = {};
+      warnaList.forEach((warna) => {
+        stok[`${warna}_Satu ukuran panjang 60cm Dada 110cm`] = 150; // stok awal per varian
+      });
+      localStorage.setItem("stokCardigan", JSON.stringify(stok));
+    }
+
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokCardigan")) || {};
+      const sisa = stok[key] ?? 0;
+
+      document.getElementById("stok-info").textContent = `Stok tersedia: ${sisa}`;
+      const jumlahInput = document.getElementById("jumlah");
+      jumlahInput.max = sisa;
+      if (jumlahInput.value < 1) jumlahInput.value = 1;
+      if (jumlahInput.value > sisa) jumlahInput.value = sisa;
+
+      document.querySelector(".btn-cart").disabled = sisa === 0;
+      document.querySelector(".btn-buy-now").disabled = sisa === 0;
+    }
+
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", updateStokInfo);
+    window.onload = updateStokInfo;
+
+    document.querySelector(".btn-cart").addEventListener("click", function () {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      let jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokCardigan"));
+
+      if (jumlah > stok[key]) {
+        alert("Jumlah melebihi stok yang tersedia!");
+        return;
+      }
+
+      stok[key] -= jumlah;
+      localStorage.setItem("stokCardigan", JSON.stringify(stok));
+
+      const produk = {
+        nama: "Korean Cardigan Premium Dark Academia Series",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp125.000",
+      };
+
+      const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+      const index = keranjang.findIndex(
+        (item) =>
+          item.nama === produk.nama &&
+          item.warna === produk.warna &&
+          item.ukuran === produk.ukuran
+      );
+
+      if (index !== -1) {
+        keranjang[index].jumlah += jumlah;
+      } else {
+        keranjang.push(produk);
+      }
+
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      alert("Produk berhasil ditambahkan ke keranjang!");
+      updateStokInfo();
+    });
+
+    document.querySelector(".btn-buy-now").addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      let jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokCardigan"));
+
+      if (jumlah > stok[key]) {
+        alert("Jumlah melebihi stok yang tersedia!");
+        return;
+      }
+
+      stok[key] -= jumlah;
+      localStorage.setItem("stokCardigan", JSON.stringify(stok));
+
+      if (!warna || !ukuran) {
+        alert("Silakan pilih warna dan ukuran terlebih dahulu.");
+        return;
+      }
+
+      const produk = [
+        {
+          nama: "Korean Cardigan Premium Dark Academia Series",
+          warna,
+          ukuran,
+          jumlah,
+          harga: "Rp125.000",
+        },
+      ];
+
+      localStorage.setItem("checkoutProduk", JSON.stringify(produk));
+      window.location.href = "checkout.html";
+    });
+
+    function changeImage(el) {
+      document.getElementById("mainImage").src = el.src;
+    }
+  </script>
+</body>
+</html>

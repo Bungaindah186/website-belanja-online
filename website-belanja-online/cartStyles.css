@@ -1,0 +1,127 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fce3e0, #dbe9f4);
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.cart-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul#cartItems {
+  list-style: none;
+  padding: 0;
+}
+
+ul#cartItems li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  font-size: 15px;
+  align-items: center;
+}
+
+.total {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+  color: #e91e63;
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.hapus-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+
+.hapus-btn:hover {
+  background-color: #d32f2f;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.clear-cart-btn,
+.checkout-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+}
+
+.clear-cart-btn {
+  background-color: #ff7043;
+  color: #fff;
+}
+
+.clear-cart-btn:hover {
+  background-color: #f4511e;
+}
+
+.checkout-btn {
+  background-color: #43a047;
+  color: #fff;
+}
+
+.checkout-btn:hover {
+  background-color: #2e7d32;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .cart-container {
+    padding: 15px;
+  }
+
+  ul#cartItems li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-actions {
+    align-items: flex-start;
+  }
+
+  .total {
+    font-size: 16px;
+  }
+
+  .clear-cart-btn,
+  .checkout-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

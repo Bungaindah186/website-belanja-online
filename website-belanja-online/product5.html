@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail Produk - Rok Bludru</title>
+  <link rel="stylesheet" href="product1.css">
+</head>
+<body>
+  <div class="top-menu">
+    <a href="#">Seller Centre</a>
+    <a href="#">Mulai Belajar</a>
+    <a href="#">Bukti Kami</a>
+  </div>
+
+  <div class="logo">
+    <img src="https://www.dropbox.com/scl/fi/5aonbed72wuc6ywq884yy/B-s-M-fotor-2025030616620.png?rlkey=065ng2atwqodtp2axns3e33n9&st=c1gmdyu5&dl=1" alt="Logo" width="100px">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari produk..." />
+      <span class="icons">🔍</span>
+      <a href="cart.html" class="icon-cart-button">🛒</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <div class="product-image">
+        <img id="mainImage" src="https://www.dropbox.com/scl/fi/f4hyidci9m4krem1iitve/foto5.jpg?rlkey=b2gmms5zfxipqsjsn17q9yxkl&st=jyj6qn1b&dl=1" alt="Rok Bludru 7/8">
+        <div class="thumbnail-gallery">
+          <img src="https://www.dropbox.com/scl/fi/f4hyidci9m4krem1iitve/foto5.jpg?rlkey=b2gmms5zfxipqsjsn17q9yxkl&st=jyj6qn1b&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/79svvllxjoimhpedeqdiy/foto5.2.jpg?rlkey=gs5fl8q7dhaad2g2ip2rshvuv&st=f9rj4y5l&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/rp5f5twdfdk50mtb60o2v/foto5.3.jpg?rlkey=khokzffdlbdbw85hq44wzyauu&st=tskb2rq2&dl=1" onclick="changeImage(this)">
+          <img src="https://www.dropbox.com/scl/fi/0767pbuyd5do2wegs210z/foto5.4.jpg?rlkey=x9e1w3oj090p4mvth117cf70c&st=bo47g7mu&dl=1" onclick="changeImage(this)">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">Rok Blundur Midi 7/8 Bludru Premium Mewah Wanita Dewasa Cewek</h1>
+        <div class="price-box">
+          <span class="price-discounted">Rp31.900</span>
+          <span class="price-original">Rp135.000</span>
+          <span class="price-off">-76%</span>
+        </div>
+        <p class="ic">177.7k terjual online</p>
+        <div class="rating-review">
+          <div class="stars">⭐ ⭐ ⭐ ⭐ ☆ </div>
+          <div class="review-count">4.7 | 9056 ulasan</div>
+        </div>
+        <p id="stok-info">Stok tersedia:</p>
+
+        <div class="variants">
+          <label for="warna">Warna:</label>
+          <select id="warna">
+            <option>Hitam</option>
+            <option>Putih</option>
+            <option>Mocca</option>
+            <option>Milo</option>
+            <option>Hijau botol</option>
+            <option>Pink</option>
+            <option>Abu Silver</option>
+            <option>Abu Tua</option>
+            <option>Army</option>
+            <option>Sage</option>
+            <option>Lillac</option>
+            <option>Maron</option>
+            <option>Latte</option>
+          </select>
+
+          <label for="ukuran">Ukuran:</label>
+          <select id="ukuran">
+            <option>Satu ukuran Pinggang 70-140cm pinggul 90-160 panjang bawahan 75cm</option>
+          </select>
+        </div>
+
+        <div class="quantity">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" value="1" min="1">
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn-favorite">♡ Favorit (1,7RB)</button>
+          <button class="btn-cart">🛒 Masukkan Keranjang</button>
+          <button class="btn-buy-now">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description-section">
+      <h2>Deskripsi Produk</h2>
+      <p>
+        Tampil mewah dan anggun setiap hari dengan <strong>Rok Plisket Bludru Velvet 7/8 Premium</strong>. Rok plisket ini memiliki panjang 7/8 (sebetis) dengan material <strong>bludru velvet asli premium</strong> yang tebal, glowing, dan tampak mengkilap. Cocok untuk kamu yang ingin tampil elegan tanpa effort berlebih!
+      </p>
+      <ul>
+        <li><strong>Bahan:</strong> Bludru Velvet Premium</li>
+        <li><strong>Panjang:</strong> 75 cm</li>
+        <li><strong>Lingkar Pinggang:</strong> 60 cm – 120 cm (melar)</li>
+        <li><strong>Lebar Bawah:</strong> 110 cm</li>
+        <li><strong>Model:</strong> Plisket 7/8 (Sebetis)</li>
+      </ul>
+      <p>
+        <em>Dijamin mewah dengan harga super terjangkau!</em> Eceran rasa grosir—cocok dipakai sendiri ataupun untuk dijual kembali.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Inisialisasi stok
+    if (!localStorage.getItem("stokRokBludru")) {
+      const warnaList = [
+        "Hitam", "Putih", "Mocca", "Milo", "Hijau botol", "Pink", "Abu Silver",
+        "Abu Tua", "Army", "Sage", "Lillac", "Maron", "Latte"
+      ];
+      const stok = {};
+      warnaList.forEach(w => {
+        stok[`${w}_Satu ukuran Pinggang 70-140cm pinggul 90-160 panjang bawahan 75cm`] = 300;
+      });
+      localStorage.setItem("stokRokBludru", JSON.stringify(stok));
+    }
+
+    function updateStokInfo() {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokRokBludru")) || {};
+      const sisa = stok[key] || 0;
+
+      document.getElementById("stok-info").textContent = `Stok tersedia: ${sisa}`;
+      const jumlahInput = document.getElementById("jumlah");
+      jumlahInput.max = sisa;
+      if (jumlahInput.value < 1) jumlahInput.value = 1;
+      if (jumlahInput.value > sisa) jumlahInput.value = sisa;
+
+      document.querySelector(".btn-cart").disabled = sisa === 0;
+      document.querySelector(".btn-buy-now").disabled = sisa === 0;
+    }
+
+    document.getElementById("warna").addEventListener("change", updateStokInfo);
+    document.getElementById("ukuran").addEventListener("change", updateStokInfo);
+    document.getElementById("jumlah").addEventListener("input", updateStokInfo);
+    window.onload = updateStokInfo;
+
+    document.querySelector(".btn-cart").addEventListener("click", function () {
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokRokBludru"));
+
+      if (jumlah > stok[key]) return alert("Jumlah melebihi stok!");
+
+      stok[key] -= jumlah;
+      localStorage.setItem("stokRokBludru", JSON.stringify(stok));
+
+      const produk = {
+        nama: "Rok Blundur Midi 7/8 Bludru Premium",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp31.900"
+      };
+
+      const keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+      const index = keranjang.findIndex(item => item.nama === produk.nama && item.warna === warna && item.ukuran === ukuran);
+
+      if (index !== -1) keranjang[index].jumlah += jumlah;
+      else keranjang.push(produk);
+
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      alert("Produk berhasil ditambahkan ke keranjang!");
+      updateStokInfo();
+    });
+
+    document.querySelector(".btn-buy-now").addEventListener("click", function (e) {
+      e.preventDefault();
+      const warna = document.getElementById("warna").value;
+      const ukuran = document.getElementById("ukuran").value;
+      const jumlah = parseInt(document.getElementById("jumlah").value);
+      const key = `${warna}_${ukuran}`;
+      const stok = JSON.parse(localStorage.getItem("stokRokBludru"));
+
+      if (jumlah > stok[key]) return alert("Jumlah melebihi stok!");
+
+      stok[key] -= jumlah;
+      localStorage.setItem("stokRokBludru", JSON.stringify(stok));
+
+      const produk = [{
+        nama: "Rok Blundur Midi 7/8 Bludru Premium",
+        warna,
+        ukuran,
+        jumlah,
+        harga: "Rp31.900"
+      }];
+
+      localStorage.setItem("checkoutProduk", JSON.stringify(produk));
+      window.location.href = "checkout.html";
+    });
+
+    function changeImage(el) {
+      document.getElementById("mainImage").src = el.src;
+    }
+  </script>
+</body>
+</html>
